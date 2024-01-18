@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}<title>portfolio home</title>{% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href=" {% static 'dist/output.css' %} " rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'project/icons/favicon.ico' %}" type="icon">
+    <script src="https://unpkg.com/htmx.org@1.9.8"
+            integrity="sha384-rgjA7mptc2ETQqXoYC3/zJvkU7K/aP44Y+z7xQuJiVnB/422P/Ak+F/AqFR7E4Wr"
+            crossorigin="anonymous"></script>
+    {% block head_extra %}{% endblock %}
+</head>
+
+
+<body>
+	<header id="body" class="top-0 z-10 bg-white border-b-[2px] border-gray-50 md:sticky shadow-md ">
+    <div class="container flex flex-col flex-wrap items-center p-1 mx-auto md:flex-row lg:flex-row">
+        <div class="flex items-center flex-wrap ">
+
+            <svg class=" h-16 w-16 hover:rotate-180" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 stroke="stroke-2">
+                <image href="../../static/project/svg/Djimiga.svg" width="80" height="80"/>
+            </svg>
+
+            <a href="/">
+                <div class="ml-3 mr-2 text-xl font-extrabold ">Djimiga Konimba
+                </div>
+            </a>
+        </div>
+         {% if  request.path == '/' or request.path == '/project-index/' %}
+        <nav class="flex flex-wrap items-center justify-center text-base md:ml-auto md:pl-4 ">
+            <a href="#services"
+               class="mr-5 font-bold text-gray-800 md:mr-10 hover:text-teal-600 hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary-600 hover:to-secondary-800"
+               >Services</a>
+            <a href="#projects"
+               class="mr-5 font-bold text-gray-800 md:mr-10 hover:text-teal-600 hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary-600 hover:to-secondary-800">Projects</a>
+            <a href="{% url 'blog-detail' pk=32 %}"
+               target="_blank"
+               class="mr-5 font-bold text-gray-800 md:mr-10 hover:text-teal-600 hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary-600 hover:to-secondary-800"
+               rel="noreferrer">Blog</a>
+
+                <div class="flex items-center justify-center">
+                  <a href="https://calendly.com/pymalien/bonjour" target="_blank"
+                     class="flex items-center font-bold text-gray-800 hover:text-teal-600 hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary-600 hover:to-secondary-800">
+                    <span>Contact</span>
+
+                  </a>
+                </div>
+            {% endif %}
+        </nav>
+    </div>
+</header>
+{% block content %}
+
+{% endblock %}
+
+
+<footer class="bg-slate-50">
+    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <div class="flex justify-center text-teal-600 sm:justify-start">
+                <svg class=" h-20 w-20 hover:rotate-180" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"
+                     stroke="currentColor">
+                    <image href="../../static/project/svg/Djimiga.svg" width="80" height="80"/>
+                </svg>
+            </div>
+            <div>
+                 <a href="https://www.linkedin.com/in/konimba-djimiga-461a6b268/" target="_blank"
+                class="mr-5 font-bold text-gray-800 md:mr-10 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary-600 hover:to-secondary-800"
+                rel="noreferrer">LinkedIn</a>
+                 <a href="https://github.com/DJIMIGA" target="_blank"
+               class="mr-5 font-bold text-gray-800 md:mr-10 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary-600 hover:to-secondary-800"
+               rel="noreferrer">Github</a>
+            </div>
+            <p class="mt-4 text-center text-sm text-gray-500 lg:mt-0 lg:text-right">
+                &copy; Made by Konimba Djimiga. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+	</body>
+</html>
