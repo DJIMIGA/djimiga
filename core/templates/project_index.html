@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Portfolio Home</title>{% endblock %}
+
+{% block content %}
+<body>
+
+
+<section id="about">
+    <div style="opacity:1; transform: none;">
+        <div class="container flex flex-col items-center px-2 mx-auto md:h-screen  md:flex-row lg:h-80 ">
+            <div class="flex flex-col  mb-2 text-center lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:items-start md:text-left md:mb-0 ">
+                <p class="text-2xl font-extrabold text-gray-800 sm:text-xl lg:text-4xl lg:leading-tight">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+                        De la Reconversion à l'Excellence
+                    </span>
+                </p>
+
+                <p class="my-2 leading-loose text-gray-600 text-md sm:text-md lg:text-2xl">
+                    Développeur web backend passionné par Python et Django, en reconversion avec plusieurs projets
+                    personnels à mon actif. Formé en autodidacte via docstrings, sur Python, Django, et la création de
+                    sites e-commerce, portfolios, et blogs. Polyvalent, je souhaite contribuer à des projets web
+                    innovants en tant que développeur backend, prêt à relever de nouveaux défis.</p>
+                <div class="flex items-center justify-center">
+                    <a href="https://calendly.com/pymalien/bonjour" target="_blank">
+                        <button class=" flex items-center justifier-center py-2 px-10 bg-green-300 text-gray-800 hover:text-teal-600 font-semibold rounded-lg shadow-sm hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                            Contactez-moi!
+                        </button>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class=" flex w-1/2 sm:max-w-1/2S lg:w-1/5 md:w-2/5 scale-95 "><img alt="profile picture" loading="lazy"
+                                                                                    width="100"
+                                                                                    height="100" decoding="async"
+                                                                                    class="w-full "
+                                                                                    src="../../static/project/image/IMG-7101.png">
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="services" class=" px-2 xl:px-0 container xl:w-252 mx-auto pt-2 scroll-smooth scroll-my-20">
+    <div class="flex flex-col items-center ">
+        <svg class=" h-10 w-10 hover:rotate-45" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"
+             stroke="currentColor">
+            <image href="../../static/project/svg/help_hands_pull.svg" width="80" height="80"/>
+        </svg>
+        <p class="bg-clip-text text-center text-transparent bg-gradient-to-r from-pink-500 to-violet-500 text-2xl font-extrabold text-gray-800">
+            Je vais t'aider à te démarquer</p>
+
+    </div>
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4 lg:grid-cols-3 py-4">
+        <div class="bg-slate-100 rounded-xl p-2">
+            <img src="../../static/project/image/img.png" width="400px" height="280px"
+                 class="rounded-xl object-left-bottom  w-full" alt="web_dev">
+            <h3 class="flex items-center gap-x-2 text-primary text-xl my-3 bg-slate-300 rounded-xl">
+                <i class="fi fi-rr-brain"></i>GESTION DE PROJECTS WEB
+            </h3>
+            <p>Site vitrine, e-commerce, blog...</p>
+        </div>
+        <div class="bg-slate-100 rounded-xl p-2">
+            <img src="../../static/project/image/img.png" width="400px" height="280px"
+                 class="rounded-xl object-left-bottom  w-full" alt="web_dev">
+            <h3 class="flex items-center gap-x-2 text-primary text-xl my-3 bg-slate-300 rounded-xl">
+                <i class="fi fi-rr-brain"></i>GESTION DE PROJECTS WEB
+            </h3>
+            <p>Site vitrine, e-commerce, blog...</p>
+        </div>
+        <div class="bg-slate-100 rounded-xl p-2">
+            <img src="../../static/project/image/img.png" width="400px" height="280px"
+                 class="rounded-xl object-left-bottom  w-full" alt="web_dev">
+            <p class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 text-2xl font-extrabold text-gray-800 rounded-xl my-3 ">
+                Gestion de projects web</p>
+            <p>De la compréhension des besoins à la conception technique, en passant par la planification et la gestion
+                du projet.</p>
+            <p>Développement d'une application web.</p>
+            <p>Assurance du bon fonctionnement d’une application tout au long de son cycle de vie.</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="scroll-smooth scroll-mt-20">
+    <div class="container py-10 mx-auto text-center">
+        <div class=" flex flex-col items-center ">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-black hover:rotate-45">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/>
+            </svg>
+            <div class=" mx-0 ">
+                <p class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 text-2xl font-extrabold text-gray-800">
+                    Projects</p>
+            </div>
+        </div>
+        <ul class="grid md:grid-cols-2 xl:grid-cols-3 gap-8 md:grid-cols-3 gap-12 pt-2">
+            {% for project in projects %}
+            <a href="{{ project.lien }}"
+               class="flex flex-col items-center overflow-visible shadow-xl border-2 rounded-xl ">
+                <div class="w-full">
+                    <img class="object-cover object-center w-full h-64 rounded-lg group-hover:opacity-25"
+                         src="{{ project.thumbnail.url }}" alt="Project Thumbnail">
+                </div>
+                <div class="w-full text-center bg-slate-300">
+                    <h5 class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 text-2xl font-extrabold text-gray-800">
+                        {{ project.title }}</h5>
+                </div>
+                <div class="w-full text-center bg-slate-200">
+                    <p class="uppercase">{{ project.description }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+
+    <section class="skills">
+        <div class="container px-6 py-10 mx-auto text-center ">
+            <div class="flex flex-col items-center py-5">
+                <svg class=" h-10 w-10 hover:rotate-90" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"
+                     stroke="currentColor">
+                    <image href="../../static/project/svg/skill.svg" width="80" height="80"/>
+                </svg>
+                <div class=" mx-0 ">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 text-2xl font-extrabold text-gray-800">My Tech Toolbox</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 xl:grid-cols-6 gap-8 md:grid-cols-6 md:gap-12 ">
+                <div class="flex flex-col items-center  overflow-hidden shadow-xl rounded-xl bg-slate-100 border-2 shrink-0">
+                    <svg class="" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         stroke="currentColor">
+                        <image href="../../static/project/svg/python.svg" width="64" height="64"/>
+                    </svg>
+                    <p class="mt-6 text-2xl font-semibold text-center md:text-xl">Python</p>
+                </div>
+                <div class="flex flex-col items-center  overflow-hidden shadow-xl rounded-xl bg-slate-100 border-2 shrink-0">
+                    <svg class="" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         stroke="currentColor">
+                        <image href="../../static/project/svg/django.svg" width="64" height="64"/>
+                    </svg>
+                    <p class="mt-6 text-2xl font-semibold text-center md:text-xl">Django</p>
+                </div>
+
+                <div class="flex flex-col items-center  overflow-hidden  shadow-xl rounded-xl bg-slate-100 border-2 shrink-0">
+                     <svg class="" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         stroke="currentColor">
+                        <image href="../../static/project/svg/html.svg" width="64" height="64"/>
+                    </svg>
+                     <p class="mt-6 text-2xl font-semibold text-center md:text-xl col-span-2">HTML</p>
+
+
+
+
+
+                </div>
+                <div class="flex flex-col items-center  overflow-hidden shadow-xl rounded-xl bg-slate-100 border-2 shrink-0">
+                    <svg class="m-4" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         stroke="currentColor">
+                        <image href="../../static/project/svg/css.svg" width="64" height="64"/>
+                    </svg>
+                      <p class="mt-6 text-2xl font-semibold text-center md:text-xl col-span-2">CSS</p>
+                </div>
+                <div class="flex flex-col items-center  overflow-hidden shadow-xl rounded-xl bg-slate-100 border-2 shrink-0 ">
+                    <svg class="" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         stroke="currentColor">
+                        <image href="../../static/project/svg/tailwind.svg" width="64" height="64"/>
+                    </svg>
+                    <p class="mt-6 text-2xl  font-semibold text-center md:text-xl col-span-2">Tailwind</p>
+                </div>
+                <div class="flex flex-col items-center  overflow-hidden shadow-xl rounded-xl bg-slate-100 border-2 shrink-0">
+                    <svg class="" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         stroke="currentColor">
+                        <image href="../../static/project/svg/htmx.png" width="64" height="64"/>
+                    </svg>
+                    <p class="mt-6 text-2xl  font-semibold text-center md:text-xl col-span-2">htmx</p>
+                </div>
+            </div>
+
+    </section>
+
+
+    {% endblock %}
