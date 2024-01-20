@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static wagtailadmin_tags %}
+
+{% block titletag %}Projects{% endblock %}
+
+{% block content %}
+    <div class="nice-padding">
+        <h1>Projects</h1>
+        <table class="listing">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Technology</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for project in items %}
+                    <tr>
+                        <td>{{ project.title }}</td>
+                        <td>{{ project.technology }}</td>
+                        <td>
+                            <a href="{% url 'wagtailadmin_pages:edit' project.pk %}" class="button button-small button-secondary">Edit</a>
+                            <a href="{% url 'wagtailadmin_pages:delete' project.pk %}" class="button button-small button-secondary">Delete</a>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="3">No projects found.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

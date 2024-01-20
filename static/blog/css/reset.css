@@ -1,0 +1,100 @@
+/* Reset CSS */
+
+/* Box sizing rules */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Remove default padding and margin */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #333;
+  text-align: left;
+  background-color: #fff;
+}
+
+/* Inherit font styles for inputs and buttons */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Remove the inner border and padding in Firefox */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* Remove the focus outline in Firefox */
+button:-moz-focusring,
+input:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/* Remove the extra space in Safari and Chrome */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+/* Remove the inner padding in Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* Remove the inner border and padding in Chrome and Safari on macOS. */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* Correct the inability to style clickable types in iOS and Safari */
+a, button {
+  cursor: pointer;
+}
+
+/* Remove the border on images inside links in IE 10- */
+a img {
+  border-style: none;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Table spacing */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Style HTML5 elements for IE 8/9 */
+/* Media queries */
+@media screen and (max-width: 1280px) {
+
+}
+
+/* Additional styles */

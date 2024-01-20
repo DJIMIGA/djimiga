@@ -1,0 +1,13 @@
+@import 'reset.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+    }
+
+}
+#custom-hover {
+    @apply bg-blue-700;
+}
