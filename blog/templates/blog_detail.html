@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block head_extra %}{% block title %} <title>blog home</title> {% endblock %}{% endblock %}
+
+{% block content %}
+<div class="inline-grid grid-cols-3 gap-4">
+        <div class="col-start-1 col-end-3">
+        <div class="p-2 ml-2 ">
+            <img class="styled-image float-left  w-64 h-64 mr-2 " src="{{ post.thumbnail.url }}" alt="Post_Thumbnail">
+            <h1 class="text-l font-bold ">{{ post.title }}</h1>
+            <p class="text-xs">
+                {{ post.created_on.date }} |&nbsp;
+                Categories:&nbsp;
+                {% for category in post.categories.all %}
+                <a class="hover " href="{% url 'blog-category' category.name %}"></a>
+                {{ category.name }}
+            <p>{{ post.formatted_body|safe }}</p>
+            {% endfor %}
+        </div>
+
+        <form method="post" action="{% url 'blog-delete' pk=post.pk %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Supprimer cet article</button>
+        </form>
+
+        <h3>Leave a comment:</h3>
+        <form action="{% url 'blog-comment' post_id=post.pk %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.author }}
+            </div>
+            <div class="form-group">
+                {{ form.body }}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <!-- Titre "Comments" -->
+        <h3>Comments:</h3>
+
+        <!-- Boucle pour chaque commentaire principal -->
+        {% for comment in comments %}
+        {% if not comment.parent_comment_id %}
+        <!-- C'est un commentaire principal -->
+        <div class="comment">
+            <!-- Affichage du commentaire principal -->
+            <p>
+                On {{ comment.created_on.date }}&nbsp;
+                <b>{{ comment.author }}</b> wrote:
+            </p>
+            <p>{{ comment.body }}</p>
+
+            <!-- Bouton "Reply" pour répondre au commentaire principal -->
+            <button class="btn btn-sm btn-primary reply-button">Reply</button>
+
+            <!-- Formulaire pour répondre au commentaire principal -->
+            <form action="{% url 'comment-comment' comment_id=comment.pk post_id=post.pk %}" method="post"
+                  class="sub-comment-form">
+                {% csrf_token %}
+                <input type="hidden" name="parent_comment" value="{{ comment.id }}">
+                <!-- Champ caché pour l'ID du commentaire parent -->
+
+                <!-- Champ d'auteur et champ de corps du sous-commentaire -->
+                <div class="form-group">
+                    {{ subcomment_form.author }}
+                </div>
+                <div class="form-group">
+                    {{ subcomment_form.body }}
+                </div>
+
+                <!-- Bouton "Submit Reply" pour soumettre le sous-commentaire -->
+                <button type="submit" class="btn btn-sm btn-primary">Submit Reply</button>
+            </form>
+
+            <!-- Sous-commentaires -->
+            <div class="sub-comments ml-4">
+                <!-- Boucle pour chaque sous-commentaire associé au commentaire principal -->
+                {% for subcomment in comments %}
+                {% if subcomment.parent_comment_id == comment.id %}
+                <div class="sub-comment">
+                    <p>
+                        On {{ subcomment.created_on.date }}&nbsp;
+                        <b>{{ subcomment.author }}</b> replied:
+                    </p>
+                    <p>{{ subcomment.body }}</p>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+
+    </div>
+    <aside class="m-2">
+        <div class="col-span-1">
+            {% for post in posts %}
+            <a href="{% url 'blog-detail' pk=post.pk %}" class="block rounded-lg hover:bg-slate-100 ">
+                <img class="float-left  w-20 h-20 m-2 styled-image"
+                     src="{{ post.thumbnail.url }}" alt="Post_Thumbnail">
+                <div class="text-xs font-bold m-2">
+                    <span> {{ post.title }}</span>
+                </div>
+                <div class="text-xs">
+                    <small>
+                        {{ post.created_on.date }} |&nbsp;
+                        Categories:&nbsp;
+                        {% for category in post.categories.all %}
+
+                        {{ category.name }}
+
+                        {% endfor %}
+                    </small>
+                </div>
+            </a>
+            {% endfor %}
+            </div>
+    </aside>
+
+
+
+
+</div>
+            {% endblock %}

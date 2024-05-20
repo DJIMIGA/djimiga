@@ -1,5 +1,5 @@
 """
-ASGI config for portfolio project.
+ASGI config for portfolio core.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

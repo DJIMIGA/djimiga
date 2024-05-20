@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+  <div class="post-container">
+    <h1>{{ page.post_title|richtext }}</h1>
+
+    {% if page.thumbnail %}
+      <div class="post-thumbnail">
+        {% image page.thumbnail fill-800x600 %}
+      </div>
+    {% endif %}
+
+    <div class="post-details">
+      <span>Posted on: {{ page.date }}</span>
+      {% if page.last_modified %}
+        <span>Last Modified: {{ page.last_modified }}</span>
+      {% endif %}
+      <div class="post-categories">
+        {% for category in page.categories.all %}
+          <span>{{ category }}</span>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="post-body">
+      {{ page.body|richtext }}
+    </div>
+  </div>
+{% endblock %}

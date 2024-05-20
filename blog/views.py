@@ -7,7 +7,7 @@ from django.urls import reverse, reverse_lazy
 
 from .forms import CommentForm, PostForm
 
-from blog.models import Post, Comment
+from .models import Post, Comment
 
 
 def blog_category(request, category):

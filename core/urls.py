@@ -7,5 +7,5 @@ from .views import project_index
 
 
 urlpatterns = [
-    path("", project_index, name="project-index"),
+    path("", project_index, name="core-index"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

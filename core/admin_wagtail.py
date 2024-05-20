@@ -11,4 +11,4 @@ class ProjectAdmin(ModelAdmin):
     exclude_from_explorer = False
     list_display = ("title", "technology")
     search_fields = ("title", "technology")
-    index_templates = "../templates/modeladmin/core/project/project_index.html"
+    index_templates = "../templates/modeladmin/core/core/project_index.html"
